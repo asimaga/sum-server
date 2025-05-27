@@ -11,7 +11,7 @@ jobs:
             - run: |
                 echo "${{secrets.SSH_KEY}}" > ~/asim.pem
                 chmod 700 ~/asim.pem
-                ssh -o StrictHostKeyChecking=no -i ~/asim.pem ubuntu@15.206.88.153 -t "cd sum-server && git pull origin main && pm2 restart index"
+                ssh -o StrictHostKeyChecking=no -i ~/asim.pem ubuntu@15.206.88.153 -t "cd sum-server && git pull origin master && pm2 restart index"
 
 
 
