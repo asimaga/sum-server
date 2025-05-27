@@ -9,7 +9,7 @@ jobs:
         name: deploy the app to the node
         steps: 
             - run: |
-                echo "{{secrets.SSH_KEY}}" &> ~/ssh_key
+                echo "{{secrets.SSH_KEY}}" > ~/ssh_key
                 chmod 700 ~/ssh_key
                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@15.206.88.153 -t "cd sum-server && git pull origin main && pm2 restart index"
 
