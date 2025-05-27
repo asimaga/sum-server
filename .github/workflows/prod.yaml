@@ -12,7 +12,7 @@ jobs:
                 echo "${{secrets.SSH_KEY}}" > ~/asim.pem
                 chmod 700 ~/asim.pem
                 ssh -o StrictHostKeyChecking=no -i ~/asim.pem ubuntu@15.206.88.153 \
-                "cd sum-server && git pull origin master && export PATH=/home/ubuntu/.nvm/versions/node/v22.15.0/bin:\$PATH && npm install && pm2 restart index"
+                "cd sum-server && git pull --no-rebase origin master && export PATH=/home/ubuntu/.nvm/versions/node/v22.15.0/bin:\$PATH && npm install && pm2 restart index"
 
 
 
