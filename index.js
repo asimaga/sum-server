@@ -75,7 +75,7 @@ function getRandomNumber(max) {
   return Math.floor(Math.random() * max);
 }
 
-app.get("/notifications", (req, res) => {
+app.get("/notificationss", (req, res) => {
   res.json({
     network: getRandomNumber(10),
     jobs: getRandomNumber(10),
