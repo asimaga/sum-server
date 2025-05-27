@@ -11,7 +11,7 @@ jobs:
             - run: |
                 echo "${{secrets.SSH_KEY}}" > ~/asim.pem
                 chmod 700 ~/asim.pem
-                ssh -i ~/asim.pem ubuntu@15.206.88.153 \
+                ssh -o StrictHostKeyChecking=no -i ~/asim.pem ubuntu@15.206.88.153 \
                 "export NVM_DIR=\$HOME/.nvm && source \$NVM_DIR/nvm.sh && nvm use 22 && which npm"
 
 
